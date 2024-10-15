@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CoolectorAPI</name>
+    </assembly>
+    <members>
+        <member name="M:CoolectorAPI.Controllers.UserController.#ctor(CoolectorAPI.Repositories.UserRepository,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Constructor initializes a new instance of the <see cref="T:CoolectorAPI.Controllers.UserController"/> class.
+            </summary>
+            <param name="repository">An instance of <see cref="T:CoolectorAPI.Repositories.UserRepository"/> for handling SQL queries related to users.</param>
+            <param name="configuration">An instance of <see cref="T:Microsoft.Extensions.Configuration.IConfiguration"/> used to retrieve application settings, including the JWT secret key.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when the JWT secret key is not provided in the configuration.</exception>
+            <remarks>
+            This constructor initializes the <see cref="T:CoolectorAPI.Controllers.UserController"/> with the necessary dependencies,
+            including a user repository for SQL queries and a secret key for generating JWT tokens.
+            </remarks>
+        </member>
+        <member name="M:CoolectorAPI.Controllers.UserController.Login(CoolectorAPI.DTO.UserLoginDTO)">
+            <summary>
+            Authenticates a user by verifying the provided email and password.
+            If the credentials are valid, a JWT token is generated and returned.
+            Otherwise, an Unauthorized response is sent.
+            </summary>
+            <param name="loginDto">The data transfer object containing the user's login credentials (email and password).</param>
+            <returns>
+            A 200 OK response with a JWT token if authentication is successful.
+            A 401 Unauthorized response if the credentials are invalid.
+            </returns>
+            <remarks>
+            This method is accessed via the following endpoint: 
+            POST: api/user/login
+            
+            It uses the <see cref="T:CoolectorAPI.DTO.UserLoginDTO"/> object to capture the email and password submitted by the user.
+            The <see cref="M:CoolectorAPI.Controllers.UserController.GenerateJwtToken(CoolectorAPI.Models.User)"/> method is called to generate a JWT token for the authenticated user.
+            </remarks>
+        </member>
+        <member name="M:CoolectorAPI.Controllers.UserController.GenerateJwtToken(CoolectorAPI.Models.User)">
+            <summary>
+            Helper method to generate a JWT Token for the specified user.
+            </summary>
+            <param name="user">The user object used to generate claims in the JWT.</param>
+            <returns>A JWT token as a string.</returns>
+            <remarks>
+            The token includes only the user's ID as a claim and has an expiration time of 10 minutes.
+            </remarks>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,6 @@
+@CoolectorAPI_HostAddress = http://localhost:5031
+
+GET {{CoolectorAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
