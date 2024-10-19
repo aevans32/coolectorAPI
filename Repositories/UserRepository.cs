@@ -58,8 +58,8 @@ namespace CoolectorAPI.Repositories
             {
                 await connection.OpenAsync();
 
-                string query = @"INSERT INTO dbo.users (email, password, firstName, lastName, relation)
-                                VALUES (@Email, @Password, @FirstName, @LastName, @Relation)";
+                string query = @"INSERT INTO dbo.users (Email, Password, FirstName, LastName, Relation, CompanyCode)
+                                VALUES (@Email, @Password, @FirstName, @LastName, @Relation, NULL)";
 
                 SqlCommand command = new SqlCommand(query, connection);
 

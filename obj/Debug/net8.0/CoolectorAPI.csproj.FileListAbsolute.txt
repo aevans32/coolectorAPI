@@ -77,3 +77,4 @@ C:\Users\andre\Local Documents\Coding Train Local\C#\Coolector API\CoolectorAPI\
 C:\Users\andre\Local Documents\Coding Train Local\C#\Coolector API\CoolectorAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\andre\Local Documents\Coding Train Local\C#\Coolector API\CoolectorAPI\bin\Debug\net8.0\Microsoft.Bcl.TimeProvider.dll
 C:\Users\andre\Local Documents\Coding Train Local\C#\Coolector API\CoolectorAPI\bin\Debug\net8.0\CoolectorAPI.xml
+C:\Users\andre\Local Documents\Coding Train Local\C#\Coolector API\CoolectorAPI\obj\Debug\net8.0\CoolectorAPI.sourcelink.json

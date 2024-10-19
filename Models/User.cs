@@ -8,6 +8,6 @@
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Relation { get; set; }
-        public string Account { get; set; }
+        public string CompanyCode { get; set; }
     }
 }

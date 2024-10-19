@@ -16,6 +16,15 @@
             including a user repository for SQL queries and a secret key for generating JWT tokens.
             </remarks>
         </member>
+        <member name="M:CoolectorAPI.Controllers.UserController.PostUser(CoolectorAPI.DTO.UserCreateDTO)">
+            <summary>
+            POST: api/user
+            Creates a New User
+            
+            </summary>
+            <param name="userDto"></param>
+            <returns></returns>
+        </member>
         <member name="M:CoolectorAPI.Controllers.UserController.Login(CoolectorAPI.DTO.UserLoginDTO)">
             <summary>
             Authenticates a user by verifying the provided email and password.

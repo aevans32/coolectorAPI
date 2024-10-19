@@ -67,7 +67,13 @@ namespace CoolectorAPI.Controllers
 
 
 
-        // POST: api/user
+        /// <summary>
+        /// POST: api/user
+        /// Creates a New User
+        /// 
+        /// </summary>
+        /// <param name="userDto"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<ActionResult<User>> PostUser(UserCreateDTO userDto)
         {
