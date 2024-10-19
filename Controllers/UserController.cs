@@ -111,7 +111,7 @@ namespace CoolectorAPI.Controllers
             if (user == null)
             {
                 // If no user was found or password is incorrect, return 401 Unauthorized
-                return Unauthorized(new { message = "Invalid email or password." });
+                return Unauthorized(new { message = "Invalid email or password from API." });
             }
 
             // If user is found, generate JWT token
