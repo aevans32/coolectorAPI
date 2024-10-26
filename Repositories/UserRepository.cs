@@ -75,14 +75,14 @@ namespace CoolectorAPI.Repositories
         }
 
         // GET ONE USER for SIGN IN
-        public async Task<User?> GetUserByCredentialsAsync(string email, string password) 
+        public async Task<int?> GetUserByCredentialsAsync(string email, string password) 
         {
-            User? user = null;
+            int? userCode = null;
 
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
                 // Query to check if a user with matching email and password exists
-                string sql = @"SELECT * FROM dbo.users
+                string sql = @"SELECT code FROM dbo.users
                                 WHERE email = @Email 
                                 AND password = @Password";
 
@@ -96,20 +96,11 @@ namespace CoolectorAPI.Repositories
 
                 if (await reader.ReadAsync()) 
                 {
-                    user = new User 
-                    {
-                        Id = reader.GetInt32(0),
-                        Email = reader.GetString(1),
-                        Password = reader.GetString(2),
-                        FirstName = reader.GetString(3),
-                        LastName = reader.GetString(4),
-                        Relation = reader.GetString(5)
-                    };
-
+                    userCode = reader.GetInt32(0);
                 }
                 await reader.CloseAsync();
             }
-            return user;
+            return userCode;
         }
 
 

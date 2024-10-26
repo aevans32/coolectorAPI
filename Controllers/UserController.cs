@@ -114,16 +114,16 @@ namespace CoolectorAPI.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] UserLoginDTO loginDto)
         {
-            var user = await _userRepository.GetUserByCredentialsAsync(loginDto.Email, loginDto.Password);
+            var userCode = await _userRepository.GetUserByCredentialsAsync(loginDto.Email, loginDto.Password);
 
-            if (user == null)
+            if (userCode == null)
             {
                 // If no user was found or password is incorrect, return 401 Unauthorized
                 return Unauthorized(new { message = "Invalid email or password from API." });
             }
 
             // If user is found, generate JWT token
-            var token = GenerateJwtToken(user);
+            var token = GenerateJwtToken(userCode.Value);
 
             // If user is found, return 200 OK with token
             return Ok(new { token });
@@ -141,12 +141,12 @@ namespace CoolectorAPI.Controllers
         /// <remarks>
         /// The token includes only the user's ID as a claim and has an expiration time of 10 minutes.
         /// </remarks>
-        private string GenerateJwtToken(User user)
+        private string GenerateJwtToken(int userCode)
         {
             var claims = new[]
             {
                 // Include only the user's ID as a claim
-                new Claim("id", user.Id.ToString())
+                new Claim("code", userCode.ToString())
             };
 
             var credentials = new SigningCredentials(_key, SecurityAlgorithms.HmacSha256);

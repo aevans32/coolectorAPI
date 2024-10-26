@@ -43,10 +43,10 @@
             POST: api/user/login
             
             It uses the <see cref="T:CoolectorAPI.DTO.UserLoginDTO"/> object to capture the email and password submitted by the user.
-            The <see cref="M:CoolectorAPI.Controllers.UserController.GenerateJwtToken(CoolectorAPI.Models.User)"/> method is called to generate a JWT token for the authenticated user.
+            The <see cref="M:CoolectorAPI.Controllers.UserController.GenerateJwtToken(System.Int32)"/> method is called to generate a JWT token for the authenticated user.
             </remarks>
         </member>
-        <member name="M:CoolectorAPI.Controllers.UserController.GenerateJwtToken(CoolectorAPI.Models.User)">
+        <member name="M:CoolectorAPI.Controllers.UserController.GenerateJwtToken(System.Int32)">
             <summary>
             Helper method to generate a JWT Token for the specified user.
             </summary>
