@@ -1,32 +1,6 @@
 [
   {
     "ContainingType": "CoolectorAPI.Controllers.UserController",
-    "Method": "PostUser",
-    "RelativePath": "api/user",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "userDto",
-        "Type": "CoolectorAPI.DTO.UserCreateDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "CoolectorAPI.Models.User",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "CoolectorAPI.Controllers.UserController",
     "Method": "GetAllUsers",
     "RelativePath": "api/user/getAll",
     "HttpMethod": "GET",
@@ -60,5 +34,31 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CoolectorAPI.Controllers.UserController",
+    "Method": "PostUser",
+    "RelativePath": "api/user/new",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userDto",
+        "Type": "CoolectorAPI.DTO.UserCreateDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CoolectorAPI.Models.User",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]

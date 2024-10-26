@@ -73,8 +73,10 @@ namespace CoolectorAPI.Controllers
         /// 
         /// </summary>
         /// <param name="userDto"></param>
+        /// Contains email and password for the user signin.
+        /// 
         /// <returns></returns>
-        [HttpPost]
+        [HttpPost("new")]
         public async Task<ActionResult<User>> PostUser(UserCreateDTO userDto)
         {
             var user = new User 

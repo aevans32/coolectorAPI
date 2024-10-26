@@ -16,9 +16,17 @@ var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
 // Add services to the container.
 builder.Services.AddControllers();
 
+
+// Read the boolean flag from appsettings.json to determine which database to use
+var useAzureDB = builder.Configuration.GetValue<bool>("UseAzureDB");
+var connectionString = useAzureDB
+    ? builder.Configuration.GetConnectionString("AzureDB")
+    : builder.Configuration.GetConnectionString("LocalDB");
+
+
 // Inject UserRepository with connection string from appsettings.json
 builder.Services.AddTransient<UserRepository>(provider =>
-    new UserRepository(builder.Configuration.GetConnectionString("MyFreeDB")));
+    new UserRepository(connectionString));
 
 // Configure CORS to allow Angular frontend (or any origin) to communicate with the API
 builder.Services.AddCors(options =>

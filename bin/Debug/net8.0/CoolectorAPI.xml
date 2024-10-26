@@ -23,6 +23,8 @@
             
             </summary>
             <param name="userDto"></param>
+            Contains email and password for the user signin.
+            
             <returns></returns>
         </member>
         <member name="M:CoolectorAPI.Controllers.UserController.Login(CoolectorAPI.DTO.UserLoginDTO)">
