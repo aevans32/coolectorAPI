@@ -4,6 +4,32 @@
         <name>CoolectorAPI</name>
     </assembly>
     <members>
+        <member name="M:CoolectorAPI.Controllers.DebtController.#ctor(CoolectorAPI.Repositories.DebtRepository)">
+            <summary>
+            Constructor initializes a new instance of the <see cref="T:CoolectorAPI.Controllers.DebtController"/> class.
+            </summary>
+            <param name="repository">An instance of <see cref="T:CoolectorAPI.Repositories.DebtRepository"/> for handling SQL queries related to debts.</param>
+        </member>
+        <member name="M:CoolectorAPI.Controllers.DebtController.GetAllDebtsForDashboard">
+            <summary>
+            GET: api/debt/dashboard
+            Retrieves all debts for the dashboard.
+            </summary>
+            <returns>A list of debts formatted for the dashboard.</returns>
+        </member>
+        <member name="M:CoolectorAPI.Controllers.DebtController.UpdateDebt(System.Int32,CoolectorAPI.DTO.Debt.DebtDashboardDTO)">
+            <summary>
+            Placeholder for updating a debt. To be implemented.
+            </summary>
+            <returns>Status indicating the result of the update.</returns>
+        </member>
+        <member name="M:CoolectorAPI.Controllers.DebtController.DeleteDebt(System.Int32)">
+            <summary>
+            Placeholder for deleting a debt. To be implemented.
+            </summary>
+            <param name="code">The unique code of the debt to be deleted.</param>
+            <returns>Status indicating the result of the deletion.</returns>
+        </member>
         <member name="M:CoolectorAPI.Controllers.UserController.#ctor(CoolectorAPI.Repositories.UserRepository,Microsoft.Extensions.Configuration.IConfiguration)">
             <summary>
             Constructor initializes a new instance of the <see cref="T:CoolectorAPI.Controllers.UserController"/> class.
@@ -55,6 +81,12 @@
             <remarks>
             The token includes only the user's ID as a claim and has an expiration time of 10 minutes.
             </remarks>
+        </member>
+        <member name="M:CoolectorAPI.Repositories.DebtRepository.GetAllDebtsForDashboardAsync">
+            <summary>
+            GET ALL DEBTS FOR DASHBOARD VIEW WITH DTO
+            </summary>
+            <returns></returns>
         </member>
     </members>
 </doc>

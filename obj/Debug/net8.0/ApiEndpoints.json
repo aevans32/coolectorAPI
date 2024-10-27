@@ -1,5 +1,62 @@
 [
   {
+    "ContainingType": "CoolectorAPI.Controllers.DebtController",
+    "Method": "UpdateDebt",
+    "RelativePath": "api/debt/{code}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "code",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "debtDto",
+        "Type": "CoolectorAPI.DTO.Debt.DebtDashboardDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CoolectorAPI.Controllers.DebtController",
+    "Method": "DeleteDebt",
+    "RelativePath": "api/debt/{code}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "code",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CoolectorAPI.Controllers.DebtController",
+    "Method": "GetAllDebtsForDashboard",
+    "RelativePath": "api/debt/dashboard",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[CoolectorAPI.DTO.Debt.DebtDashboardDTO, CoolectorAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "CoolectorAPI.Controllers.UserController",
     "Method": "GetAllUsers",
     "RelativePath": "api/user/getAll",

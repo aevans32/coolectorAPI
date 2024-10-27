@@ -28,6 +28,11 @@ var connectionString = useAzureDB
 builder.Services.AddTransient<UserRepository>(provider =>
     new UserRepository(connectionString));
 
+// Inject DebtRepository with connection string from appsettings.json
+builder.Services.AddTransient<DebtRepository>(provider =>
+    new DebtRepository(connectionString));
+
+
 // Configure CORS to allow Angular frontend (or any origin) to communicate with the API
 builder.Services.AddCors(options =>
 {
