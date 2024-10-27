@@ -23,7 +23,7 @@ namespace CoolectorAPI.Repositories
 
             using (SqlConnection connection = new SqlConnection(_connectionString)) 
             {
-                string sql = @"SELECT ClientName, Status, Amount, IssueDate, ExpDate FROM {TableName}";
+                string sql = $@"SELECT ClientName, Status, Amount, IssueDate, ExpDate FROM {TableName}";
 
                 SqlCommand command = new SqlCommand(sql, connection);
 
