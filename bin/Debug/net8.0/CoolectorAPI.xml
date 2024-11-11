@@ -17,6 +17,13 @@
             </summary>
             <returns>A list of debts formatted for the dashboard.</returns>
         </member>
+        <member name="M:CoolectorAPI.Controllers.DebtController.AddDebt(CoolectorAPI.DTO.Debt.DebtDashboardDTO)">
+            <summary>
+            
+            </summary>
+            <param name="debtDto"></param>
+            <returns></returns>
+        </member>
         <member name="M:CoolectorAPI.Controllers.DebtController.UpdateDebt(System.Int32,CoolectorAPI.DTO.Debt.DebtDashboardDTO)">
             <summary>
             Placeholder for updating a debt. To be implemented.
@@ -87,6 +94,13 @@
             GET ALL DEBTS FOR DASHBOARD VIEW WITH DTO
             </summary>
             <returns></returns>
+        </member>
+        <member name="M:CoolectorAPI.Repositories.DebtRepository.AddDebtAsync(CoolectorAPI.Models.Debt)">
+            <summary>
+            Adds a new debt entry to the database.
+            </summary>
+            <param name="newDebt">The debt data to be added.</param>
+            <returns>The added debt, including any auto-generated fields like ID if applicable.</returns>
         </member>
     </members>
 </doc>

@@ -1,4 +1,5 @@
 ﻿using CoolectorAPI.DTO.Debt;
+using CoolectorAPI.Models;
 using Microsoft.Data.SqlClient;
 
 namespace CoolectorAPI.Repositories
@@ -23,7 +24,7 @@ namespace CoolectorAPI.Repositories
 
             using (SqlConnection connection = new SqlConnection(_connectionString)) 
             {
-                string sql = $@"SELECT ClientName, Status, Amount, IssueDate, ExpDate FROM {TableName}";
+                string sql = $@"SELECT Code, ClientName, Status, Amount, IssueDate, ExpDate FROM {TableName}";
 
                 SqlCommand command = new SqlCommand(sql, connection);
 
@@ -35,11 +36,12 @@ namespace CoolectorAPI.Repositories
                 {
                     var debt = new DebtDashboardDTO
                     {
-                        ClientName = reader.GetString(0),
-                        Status = reader.GetString(1),
-                        Amount = reader.GetDecimal(2),
-                        IssueDate = reader.GetDateTime(3),
-                        ExpDate = reader.GetDateTime(4)
+                        //Code = reader.GetInt32(0),
+                        ClientName = reader.GetString(1),
+                        Status = reader.GetString(2),
+                        Amount = reader.GetDecimal(3),
+                        IssueDate = reader.GetDateTime(4),
+                        ExpDate = reader.GetDateTime(5)
                     };
                     debts.Add(debt);
                 }
@@ -51,6 +53,44 @@ namespace CoolectorAPI.Repositories
             return debts;
         }
         // ---------------------------- END OF GetAllDebtsForDashboardAsync-----------------------------------
+
+
+
+        /// <summary>
+        /// Adds a new debt entry to the database.
+        /// </summary>
+        /// <param name="newDebt">The debt data to be added.</param>
+        /// <returns>The added debt, including any auto-generated fields like ID if applicable.</returns>
+        public async Task<Int32> AddDebtAsync(Debt newDebt)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string sql = $@"
+            INSERT INTO dbo.Debt (ClientName, Amount, IssueDate, ExpDate, Status)
+            VALUES (@ClientName, @Amount, @IssueDate, @ExpDate, @Status);
+            SELECT SCOPE_IDENTITY();"; // Get the new code
+
+                SqlCommand command = new SqlCommand(sql, connection);
+
+                command.Parameters.AddWithValue("@ClientName", newDebt.ClientName);
+                command.Parameters.AddWithValue("@Amount", newDebt.Amount);
+                command.Parameters.AddWithValue("@IssueDate", newDebt.IssueDate);
+                command.Parameters.AddWithValue("@ExpDate", newDebt.ExpDate);
+                command.Parameters.AddWithValue("@Status", newDebt.Status);
+
+                await connection.OpenAsync();
+
+                var newCode = await command.ExecuteScalarAsync();
+                if (newCode != null && int.TryParse(newCode.ToString(), out int code))
+                {
+                    newDebt.Code = code; // Update the DTO with the new code
+                }
+
+                return newDebt.Code; // Return the new debt code
+            }
+        }
+
+
 
     }
 }

@@ -2,6 +2,7 @@
 {
     public class DebtDashboardDTO
     {
+        //public int Code { get; set; } 
         public string ClientName { get; set; }  // Name of the client
         public string Status { get; set; }      // Status of the debt (e.g., 'pending')
         public decimal Amount { get; set; }     // Amount of the debt

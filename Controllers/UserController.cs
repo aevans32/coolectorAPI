@@ -147,7 +147,7 @@ namespace CoolectorAPI.Controllers
             {
                 // Include only the user's ID as a claim
                 new Claim("code", userCode.ToString())
-            };
+            };              
 
             var credentials = new SigningCredentials(_key, SecurityAlgorithms.HmacSha256);
 

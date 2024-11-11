@@ -1,4 +1,5 @@
 ﻿using CoolectorAPI.DTO.Debt;
+using CoolectorAPI.Models;
 using CoolectorAPI.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
@@ -34,6 +35,28 @@ namespace CoolectorAPI.Controllers
             return Ok(debts);
         }
         // ==================== end of GetAllDebtsForDashboard GET call ====================
+
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="debtDto"></param>
+        /// <returns></returns>
+        [HttpPost("add")]
+        public async Task<ActionResult<Int32>> AddDebt(DebtDashboardDTO debtDto)
+        {
+            var newDebt = new Debt
+            {
+                ClientName = debtDto.ClientName,
+                Status = debtDto.Status,
+                Amount = debtDto.Amount,
+                IssueDate = debtDto.IssueDate,
+                ExpDate = debtDto.ExpDate
+            };
+                                
+            int newCode = await _debtRepository.AddDebtAsync(newDebt);
+            return Ok(new { Code = newCode });
+        }
 
 
         /// <summary>

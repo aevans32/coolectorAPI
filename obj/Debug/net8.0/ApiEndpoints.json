@@ -38,6 +38,32 @@
   },
   {
     "ContainingType": "CoolectorAPI.Controllers.DebtController",
+    "Method": "AddDebt",
+    "RelativePath": "api/debt/add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "debtDto",
+        "Type": "CoolectorAPI.DTO.Debt.DebtDashboardDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Int32",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CoolectorAPI.Controllers.DebtController",
     "Method": "GetAllDebtsForDashboard",
     "RelativePath": "api/debt/dashboard",
     "HttpMethod": "GET",
