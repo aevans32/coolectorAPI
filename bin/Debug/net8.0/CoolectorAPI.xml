@@ -12,14 +12,13 @@
         </member>
         <member name="M:CoolectorAPI.Controllers.DebtController.GetAllDebtsForDashboard">
             <summary>
-            GET: api/debt/dashboard
-            Retrieves all debts for the dashboard.
+            Retrieves all debts for the dashboard including the code for each one.
             </summary>
             <returns>A list of debts formatted for the dashboard.</returns>
         </member>
         <member name="M:CoolectorAPI.Controllers.DebtController.AddDebt(CoolectorAPI.DTO.Debt.DebtDashboardDTO)">
             <summary>
-            
+            Creates a new debt.
             </summary>
             <param name="debtDto"></param>
             <returns></returns>
@@ -30,12 +29,11 @@
             </summary>
             <returns>Status indicating the result of the update.</returns>
         </member>
-        <member name="M:CoolectorAPI.Controllers.DebtController.DeleteDebt(System.Int32)">
+        <member name="M:CoolectorAPI.Controllers.DebtController.DeleteDebts(System.Collections.Generic.List{System.Int32})">
             <summary>
-            Placeholder for deleting a debt. To be implemented.
+            Method to delete a list of debts.
             </summary>
-            <param name="code">The unique code of the debt to be deleted.</param>
-            <returns>Status indicating the result of the deletion.</returns>
+            <returns> 204 No Content indicates successful deletion with no response body.</returns>
         </member>
         <member name="M:CoolectorAPI.Controllers.UserController.#ctor(CoolectorAPI.Repositories.UserRepository,Microsoft.Extensions.Configuration.IConfiguration)">
             <summary>

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CoolectorAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7558e744696feb103075d6c1cf9e0f1d5a20995d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+01fd22d90c80e05321f84e2b73c94b7cc33fcd73")]
 [assembly: System.Reflection.AssemblyProductAttribute("CoolectorAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CoolectorAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

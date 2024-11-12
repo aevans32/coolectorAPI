@@ -18,9 +18,9 @@ namespace CoolectorAPI.Repositories
         /// GET ALL DEBTS FOR DASHBOARD VIEW WITH DTO
         /// </summary>
         /// <returns></returns>
-        public async Task<List<DebtDashboardDTO>> GetAllDebtsForDashboardAsync() 
+        public async Task<List<DebtDashboardWCodeDTO>> GetAllDebtsForDashboardAsync() 
         {
-            var debts = new List<DebtDashboardDTO>();
+            var debts = new List<DebtDashboardWCodeDTO>();
 
             using (SqlConnection connection = new SqlConnection(_connectionString)) 
             {
@@ -34,9 +34,9 @@ namespace CoolectorAPI.Repositories
 
                 while (await reader.ReadAsync()) 
                 {
-                    var debt = new DebtDashboardDTO
+                    var debt = new DebtDashboardWCodeDTO
                     {
-                        //Code = reader.GetInt32(0),
+                        Code = reader.GetInt32(0),
                         ClientName = reader.GetString(1),
                         Status = reader.GetString(2),
                         Amount = reader.GetDecimal(3),
@@ -90,6 +90,27 @@ namespace CoolectorAPI.Repositories
             }
         }
 
+
+        public async Task DeleteDebtsAsync(List<int> codes)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string sql = $@"
+                    DELETE FROM {TableName}
+                    WHERE Code IN ({string.Join(",", codes.Select((_, i) =>  $"@Code{i}"))})";
+
+                SqlCommand command = new SqlCommand(sql, connection);
+
+                // Add each code as a parameter
+                for (int i = 0; i < codes.Count; i++)
+                {
+                    command.Parameters.AddWithValue($"@Code{i}", codes[i]);
+                }
+
+                await connection.OpenAsync();
+                await command.ExecuteNonQueryAsync();
+            }
+        }
 
 
     }

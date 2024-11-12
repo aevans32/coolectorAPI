@@ -24,12 +24,11 @@ namespace CoolectorAPI.Controllers
 
 
         /// <summary>
-        /// GET: api/debt/dashboard
-        /// Retrieves all debts for the dashboard.
+        /// Retrieves all debts for the dashboard including the code for each one.
         /// </summary>
         /// <returns>A list of debts formatted for the dashboard.</returns>
         [HttpGet("dashboard")]
-        public async Task<ActionResult<IEnumerable<DebtDashboardDTO>>> GetAllDebtsForDashboard()
+        public async Task<ActionResult<IEnumerable<DebtDashboardWCodeDTO>>> GetAllDebtsForDashboard()
         { 
             var debts = await _debtRepository.GetAllDebtsForDashboardAsync();
             return Ok(debts);
@@ -38,7 +37,7 @@ namespace CoolectorAPI.Controllers
 
         
         /// <summary>
-        /// 
+        /// Creates a new debt.
         /// </summary>
         /// <param name="debtDto"></param>
         /// <returns></returns>
@@ -74,18 +73,21 @@ namespace CoolectorAPI.Controllers
 
 
         /// <summary>
-        /// Placeholder for deleting a debt. To be implemented.
+        /// Method to delete a list of debts.
         /// </summary>
-        /// <param name="code">The unique code of the debt to be deleted.</param>
-        /// <returns>Status indicating the result of the deletion.</returns>
-        [HttpDelete("{code}")]
-        public async Task<IActionResult> DeleteDebt(int code)
+        /// <returns> 204 No Content indicates successful deletion with no response body.</returns>
+        [HttpDelete("delete")]
+        public async Task<IActionResult> DeleteDebts([FromBody] List<int> codes)
         {
-            // Placeholder for deleting debt by code.
-            // Implementation will be added in the future.
-            return Ok(new { message = $"Delete functionality for debt with code {code} will be implemented." });
+            if (codes == null || !codes.Any())
+            { 
+                return  BadRequest("No codes provided for deletion.");
+            }
+
+            await _debtRepository.DeleteDebtsAsync(codes);
+            return NoContent();
         }
-        // ==================== end of DeleteDebt DELETE call ====================
+        // ==================== end of DeleteDebts DELETE call ====================
 
     }
 }

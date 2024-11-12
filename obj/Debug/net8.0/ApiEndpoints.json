@@ -22,22 +22,6 @@
   },
   {
     "ContainingType": "CoolectorAPI.Controllers.DebtController",
-    "Method": "DeleteDebt",
-    "RelativePath": "api/debt/{code}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "code",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "CoolectorAPI.Controllers.DebtController",
     "Method": "AddDebt",
     "RelativePath": "api/debt/add",
     "HttpMethod": "POST",
@@ -72,7 +56,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[CoolectorAPI.DTO.Debt.DebtDashboardDTO, CoolectorAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[CoolectorAPI.DTO.Debt.DebtDashboardWCodeDTO, CoolectorAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -81,6 +65,22 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "CoolectorAPI.Controllers.DebtController",
+    "Method": "DeleteDebts",
+    "RelativePath": "api/debt/delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "codes",
+        "Type": "System.Collections.Generic.List\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "CoolectorAPI.Controllers.UserController",
