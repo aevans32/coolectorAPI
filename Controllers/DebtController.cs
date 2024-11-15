@@ -44,6 +44,8 @@ namespace CoolectorAPI.Controllers
         [HttpPost("add")]
         public async Task<ActionResult<Int32>> AddDebt(DebtDashboardDTO debtDto)
         {
+            Console.WriteLine(debtDto);
+
             var newDebt = new Debt
             {
                 ClientName = debtDto.ClientName,
@@ -77,15 +79,19 @@ namespace CoolectorAPI.Controllers
         /// </summary>
         /// <returns> 204 No Content indicates successful deletion with no response body.</returns>
         [HttpDelete("delete")]
-        public async Task<IActionResult> DeleteDebts([FromBody] List<int> codes)
+        public async Task<IActionResult> DeleteDebts([FromBody] CodeRequestDTO request)
         {
-            if (codes == null || !codes.Any())
+            if (request.Codes == null || !request.Codes.Any())
             { 
                 return  BadRequest("No codes provided for deletion.");
             }
 
-            await _debtRepository.DeleteDebtsAsync(codes);
+            await _debtRepository.DeleteDebtsAsync(request.Codes);
             return NoContent();
+
+            // Modify the response of DeleteDebtsAsync to make the following return a result to the frontend
+            //var deletedCodes = await _debtRepository.DeleteDebtsAsync(request.Codes);
+            //return Ok(new { message = "Deletion successful", deletedCodes = deletedCodes });
         }
         // ==================== end of DeleteDebts DELETE call ====================
 

@@ -29,7 +29,7 @@
             </summary>
             <returns>Status indicating the result of the update.</returns>
         </member>
-        <member name="M:CoolectorAPI.Controllers.DebtController.DeleteDebts(System.Collections.Generic.List{System.Int32})">
+        <member name="M:CoolectorAPI.Controllers.DebtController.DeleteDebts(CoolectorAPI.DTO.Debt.CodeRequestDTO)">
             <summary>
             Method to delete a list of debts.
             </summary>
