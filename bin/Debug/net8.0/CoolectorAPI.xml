@@ -35,6 +35,25 @@
             </summary>
             <returns> 204 No Content indicates successful deletion with no response body.</returns>
         </member>
+        <member name="M:CoolectorAPI.Controllers.DebtController.GetDebtsByClientName(CoolectorAPI.DTO.Debt.ClientNameDTO)">
+            <summary>
+            Retrieves all pending debts for a specific client based on their name.
+            </summary>
+            <param name="clientNameDto">The JSON object containing the client's name.</param>
+            <returns>
+            A list of pending debts for the specified client, including the debt code, 
+            client name, amount, issue date, and expiration date.
+            </returns>
+            <remarks>
+            - The <paramref name="clientNameDto"/> must include a valid client name in the `ClientName` property.
+            - This endpoint only retrieves debts with a status of "pending".
+            - The client's name must match exactly with the values stored in the database.
+            - Use this endpoint for filtered debt retrieval by client name; for retrieving all debts, use `/dashboard`.
+            </remarks>
+            <response code="200">Returns the list of pending debts for the specified client.</response>
+            <response code="400">If the client name is null, empty, or invalid.</response>
+            <response code="500">If an internal server error occurs while processing the request.</response>
+        </member>
         <member name="M:CoolectorAPI.Controllers.UserController.#ctor(CoolectorAPI.Repositories.UserRepository,Microsoft.Extensions.Configuration.IConfiguration)">
             <summary>
             Constructor initializes a new instance of the <see cref="T:CoolectorAPI.Controllers.UserController"/> class.
@@ -99,6 +118,31 @@
             </summary>
             <param name="newDebt">The debt data to be added.</param>
             <returns>The added debt, including any auto-generated fields like ID if applicable.</returns>
+        </member>
+        <member name="M:CoolectorAPI.Repositories.DebtRepository.GetPendingDebtsByClientNameAsync(System.String)">
+            <summary>
+            Retrieves a list of pending debts for a specific client by their name.
+            </summary>
+            <param name="clientName">The exact name of the client to filter debts for.</param>
+            <returns>
+            A list of <see cref="T:CoolectorAPI.DTO.Debt.DebtDashboardWCodeDTO"/> objects representing the pending debts
+            for the specified client. Each object includes the debt code, client name, amount,
+            issue date, and expiration date.
+            </returns>
+            <remarks>
+            - The query filters debts where the <c>Status</c> is "pending".
+            - The <c>Status</c> column is not returned in the results, as it is assumed to be constant.
+            - Ensure that <paramref name="clientName"/> is a valid and non-null string to avoid errors.
+            </remarks>
+            <exception cref="T:Microsoft.Data.SqlClient.SqlException">
+            Thrown if there is an issue with the database connection or query execution.
+            </exception>
+            <example>
+            Example usage:
+            <code>
+            var debts = await _debtRepository.GetPendingDebtsByClientNameAsync("Robert");
+            </code>
+            </example>
         </member>
     </members>
 </doc>

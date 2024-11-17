@@ -95,5 +95,70 @@ namespace CoolectorAPI.Controllers
         }
         // ==================== end of DeleteDebts DELETE call ====================
 
+
+
+
+        /// <summary>
+        /// Retrieves all pending debts for a specific client based on their name.
+        /// </summary>
+        /// <param name="clientNameDto">The JSON object containing the client's name.</param>
+        /// <returns>
+        /// A list of pending debts for the specified client, including the debt code, 
+        /// client name, amount, issue date, and expiration date.
+        /// </returns>
+        /// <remarks>
+        /// - The <paramref name="clientNameDto"/> must include a valid client name in the `ClientName` property.
+        /// - This endpoint only retrieves debts with a status of "pending".
+        /// - The client's name must match exactly with the values stored in the database.
+        /// - Use this endpoint for filtered debt retrieval by client name; for retrieving all debts, use `/dashboard`.
+        /// </remarks>
+        /// <response code="200">Returns the list of pending debts for the specified client.</response>
+        /// <response code="400">If the client name is null, empty, or invalid.</response>
+        /// <response code="500">If an internal server error occurs while processing the request.</response>
+        [HttpPost("filter-by-client")]
+        public async Task<ActionResult<IEnumerable<DebtDashboardWCodeDTO>>> GetDebtsByClientName([FromBody] ClientNameDTO clientNameDto)
+        {
+            if (string.IsNullOrWhiteSpace(clientNameDto.ClientName))
+            {
+                return BadRequest("Client name is required.");
+            }
+
+            // Call the repository method
+            var debts = await _debtRepository.GetPendingDebtsByClientNameAsync(clientNameDto.ClientName);
+
+            // Return the result
+            return Ok(debts);
+        }
+
+
+
+        [HttpPut("update-status")]
+        public async Task<IActionResult> UpdateDebtStatus([FromBody] UpdateDebtStatusDTO updateRequest)
+        {
+            if (updateRequest == null || updateRequest.Codes == null || !updateRequest.Codes.Any())
+            {
+                return BadRequest("Invalid request: No codes provided.");
+            }
+
+            if (string.IsNullOrEmpty(updateRequest.Status))
+            {
+                return BadRequest("Invalid request: Status is required.");
+            }
+
+            try
+            {
+                await _debtRepository.UpdateDebtStatusAsync(updateRequest.Codes, updateRequest.Status);
+                return Ok(new { message = "Debt statuses updated successfully." });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error updating debt statuses:", ex);
+                return StatusCode(500, new { error = "An error occurred while updating debts.", details = ex.Message } );
+            }
+        }
+
+
+
+
     }
 }

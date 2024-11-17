@@ -113,5 +113,89 @@ namespace CoolectorAPI.Repositories
         }
 
 
+        /// <summary>
+        /// Retrieves a list of pending debts for a specific client by their name.
+        /// </summary>
+        /// <param name="clientName">The exact name of the client to filter debts for.</param>
+        /// <returns>
+        /// A list of <see cref="DebtDashboardWCodeDTO"/> objects representing the pending debts
+        /// for the specified client. Each object includes the debt code, client name, amount,
+        /// issue date, and expiration date.
+        /// </returns>
+        /// <remarks>
+        /// - The query filters debts where the <c>Status</c> is "pending".
+        /// - The <c>Status</c> column is not returned in the results, as it is assumed to be constant.
+        /// - Ensure that <paramref name="clientName"/> is a valid and non-null string to avoid errors.
+        /// </remarks>
+        /// <exception cref="SqlException">
+        /// Thrown if there is an issue with the database connection or query execution.
+        /// </exception>
+        /// <example>
+        /// Example usage:
+        /// <code>
+        /// var debts = await _debtRepository.GetPendingDebtsByClientNameAsync("Robert");
+        /// </code>
+        /// </example>
+        public async Task<List<DebtDashboardWCodeDTO>> GetPendingDebtsByClientNameAsync(string clientName)
+        {
+            var debts = new List<DebtDashboardWCodeDTO>();
+
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string sql = $@"
+                    SELECT Code, ClientName, Status, Amount, IssueDate, ExpDate
+                    FROM {TableName} 
+                    WHERE ClientName = @ClientName AND Status = @Status";
+
+                SqlCommand command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@ClientName", clientName); // Filter by ClientName
+                command.Parameters.AddWithValue("@Status", "pending");     // Filter by Status
+
+                await connection.OpenAsync();
+
+                SqlDataReader reader = await command.ExecuteReaderAsync();
+
+                while (await reader.ReadAsync())
+                {
+                    var debt = new DebtDashboardWCodeDTO
+                    {
+                        Code = reader.GetInt32(0),
+                        ClientName = reader.GetString(1),
+                        Status = reader.GetString(2),
+                        Amount = reader.GetDecimal(3),
+                        IssueDate = reader.GetDateTime(4),
+                        ExpDate = reader.GetDateTime(5),
+                    };
+                    debts.Add(debt);
+                }
+
+                await reader.CloseAsync();
+            }
+
+            return debts;
+        }
+
+
+
+        public async Task UpdateDebtStatusAsync(List<int> codes, string status)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string sql = $@"
+            UPDATE {TableName} 
+            SET Status = @Status
+            WHERE Code IN ({string.Join(",", codes)})";
+
+                SqlCommand command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@Status", status);
+
+                await connection.OpenAsync();
+                await command.ExecuteNonQueryAsync();
+            }
+        }
+
+
+
+
     }
 }
