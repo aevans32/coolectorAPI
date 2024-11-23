@@ -3,16 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\andre\\Local Documents\\Coding Train Local\\C#\\Coolector API\\CoolectorAPI\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{90927D57-43B9-454C-9C65-DFF847A255C1}|CoolectorAPI.csproj|c:\\users\\andre\\local documents\\coding train local\\c#\\coolector api\\coolectorapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{90927D57-43B9-454C-9C65-DFF847A255C1}|CoolectorAPI.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{90927D57-43B9-454C-9C65-DFF847A255C1}|CoolectorAPI.csproj|c:\\users\\andre\\local documents\\coding train local\\c#\\coolector api\\coolectorapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{90927D57-43B9-454C-9C65-DFF847A255C1}|CoolectorAPI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90927D57-43B9-454C-9C65-DFF847A255C1}|CoolectorAPI.csproj|c:\\users\\andre\\local documents\\coding train local\\c#\\coolector api\\coolectorapi\\coolectorapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{90927D57-43B9-454C-9C65-DFF847A255C1}|CoolectorAPI.csproj|solutionrelative:coolectorapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+      "AbsoluteMoniker": "D:0:0:{90927D57-43B9-454C-9C65-DFF847A255C1}|CoolectorAPI.csproj|c:\\users\\andre\\local documents\\coding train local\\c#\\coolector api\\coolectorapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90927D57-43B9-454C-9C65-DFF847A255C1}|CoolectorAPI.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90927D57-43B9-454C-9C65-DFF847A255C1}|CoolectorAPI.csproj|c:\\users\\andre\\local documents\\coding train local\\c#\\coolector api\\coolectorapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{90927D57-43B9-454C-9C65-DFF847A255C1}|CoolectorAPI.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{90927D57-43B9-454C-9C65-DFF847A255C1}|CoolectorAPI.csproj|c:\\users\\andre\\local documents\\coding train local\\c#\\coolector api\\coolectorapi\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90927D57-43B9-454C-9C65-DFF847A255C1}|CoolectorAPI.csproj|solutionrelative:repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90927D57-43B9-454C-9C65-DFF847A255C1}|CoolectorAPI.csproj|c:\\users\\andre\\local documents\\coding train local\\c#\\coolector api\\coolectorapi\\dto\\debt\\debtdashboardwcodedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90927D57-43B9-454C-9C65-DFF847A255C1}|CoolectorAPI.csproj|solutionrelative:dto\\debt\\debtdashboardwcodedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90927D57-43B9-454C-9C65-DFF847A255C1}|CoolectorAPI.csproj|c:\\users\\andre\\local documents\\coding train local\\c#\\coolector api\\coolectorapi\\coolectorapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{90927D57-43B9-454C-9C65-DFF847A255C1}|CoolectorAPI.csproj|solutionrelative:coolectorapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{90927D57-43B9-454C-9C65-DFF847A255C1}|CoolectorAPI.csproj|c:\\users\\andre\\local documents\\coding train local\\c#\\coolector api\\coolectorapi\\controllers\\debtcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,10 +39,6 @@
       "RelativeMoniker": "D:0:0:{90927D57-43B9-454C-9C65-DFF847A255C1}|CoolectorAPI.csproj|solutionrelative:dto\\debt\\updatedebtstatusdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90927D57-43B9-454C-9C65-DFF847A255C1}|CoolectorAPI.csproj|c:\\users\\andre\\local documents\\coding train local\\c#\\coolector api\\coolectorapi\\dto\\debt\\debtdashboardwcodedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90927D57-43B9-454C-9C65-DFF847A255C1}|CoolectorAPI.csproj|solutionrelative:dto\\debt\\debtdashboardwcodedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{90927D57-43B9-454C-9C65-DFF847A255C1}|CoolectorAPI.csproj|c:\\users\\andre\\local documents\\coding train local\\c#\\coolector api\\coolectorapi\\dto\\debt\\clientnamedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{90927D57-43B9-454C-9C65-DFF847A255C1}|CoolectorAPI.csproj|solutionrelative:dto\\debt\\clientnamedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -43,14 +51,6 @@
       "RelativeMoniker": "D:0:0:{90927D57-43B9-454C-9C65-DFF847A255C1}|CoolectorAPI.csproj|solutionrelative:dto\\debt\\debtdashboarddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90927D57-43B9-454C-9C65-DFF847A255C1}|CoolectorAPI.csproj|c:\\users\\andre\\local documents\\coding train local\\c#\\coolector api\\coolectorapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90927D57-43B9-454C-9C65-DFF847A255C1}|CoolectorAPI.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90927D57-43B9-454C-9C65-DFF847A255C1}|CoolectorAPI.csproj|c:\\users\\andre\\local documents\\coding train local\\c#\\coolector api\\coolectorapi\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90927D57-43B9-454C-9C65-DFF847A255C1}|CoolectorAPI.csproj|solutionrelative:repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{90927D57-43B9-454C-9C65-DFF847A255C1}|CoolectorAPI.csproj|c:\\users\\andre\\local documents\\coding train local\\c#\\coolector api\\coolectorapi\\dto\\usercreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{90927D57-43B9-454C-9C65-DFF847A255C1}|CoolectorAPI.csproj|solutionrelative:dto\\usercreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -61,10 +61,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{90927D57-43B9-454C-9C65-DFF847A255C1}|CoolectorAPI.csproj|c:\\users\\andre\\local documents\\coding train local\\c#\\coolector api\\coolectorapi\\dto\\userlogindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{90927D57-43B9-454C-9C65-DFF847A255C1}|CoolectorAPI.csproj|solutionrelative:dto\\userlogindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90927D57-43B9-454C-9C65-DFF847A255C1}|CoolectorAPI.csproj|c:\\users\\andre\\local documents\\coding train local\\c#\\coolector api\\coolectorapi\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{90927D57-43B9-454C-9C65-DFF847A255C1}|CoolectorAPI.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -74,72 +70,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "DebtController.cs",
-              "DocumentMoniker": "C:\\Users\\andre\\Local Documents\\Coding Train Local\\C#\\Coolector API\\CoolectorAPI\\Controllers\\DebtController.cs",
-              "RelativeDocumentMoniker": "Controllers\\DebtController.cs",
-              "ToolTip": "C:\\Users\\andre\\Local Documents\\Coding Train Local\\C#\\Coolector API\\CoolectorAPI\\Controllers\\DebtController.cs",
-              "RelativeToolTip": "Controllers\\DebtController.cs",
-              "ViewState": "AgIAAIUAAAAAAAAAAAAYwKEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-27T02:13:09.193Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DebtDashboardWCodeDTO.cs",
-              "DocumentMoniker": "C:\\Users\\andre\\Local Documents\\Coding Train Local\\C#\\Coolector API\\CoolectorAPI\\DTO\\Debt\\DebtDashboardWCodeDTO.cs",
-              "RelativeDocumentMoniker": "DTO\\Debt\\DebtDashboardWCodeDTO.cs",
-              "ToolTip": "C:\\Users\\andre\\Local Documents\\Coding Train Local\\C#\\Coolector API\\CoolectorAPI\\DTO\\Debt\\DebtDashboardWCodeDTO.cs",
-              "RelativeToolTip": "DTO\\Debt\\DebtDashboardWCodeDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T02:00:16.107Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DebtRepository.cs",
-              "DocumentMoniker": "C:\\Users\\andre\\Local Documents\\Coding Train Local\\C#\\Coolector API\\CoolectorAPI\\Repositories\\DebtRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\DebtRepository.cs",
-              "ToolTip": "C:\\Users\\andre\\Local Documents\\Coding Train Local\\C#\\Coolector API\\CoolectorAPI\\Repositories\\DebtRepository.cs",
-              "RelativeToolTip": "Repositories\\DebtRepository.cs",
-              "ViewState": "AgIAAK4AAAAAAAAAAAAAAMMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-27T01:41:45.453Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "C:\\Users\\andre\\Local Documents\\Coding Train Local\\C#\\Coolector API\\CoolectorAPI\\Repositories\\UserRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\UserRepository.cs",
               "ToolTip": "C:\\Users\\andre\\Local Documents\\Coding Train Local\\C#\\Coolector API\\CoolectorAPI\\Repositories\\UserRepository.cs",
               "RelativeToolTip": "Repositories\\UserRepository.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAAAFYAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAkwCsAAABUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T02:22:01.678Z"
+              "WhenOpened": "2024-10-15T02:22:01.678Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\andre\\Local Documents\\Coding Train Local\\C#\\Coolector API\\CoolectorAPI\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\andre\\Local Documents\\Coding Train Local\\C#\\Coolector API\\CoolectorAPI\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAAEAAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEsAAABaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-15T01:50:19.544Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "CoolectorAPI.http",
               "DocumentMoniker": "C:\\Users\\andre\\Local Documents\\Coding Train Local\\C#\\Coolector API\\CoolectorAPI\\CoolectorAPI.http",
               "RelativeDocumentMoniker": "CoolectorAPI.http",
@@ -147,25 +108,76 @@
               "RelativeToolTip": "CoolectorAPI.http",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2024-10-19T20:03:56.591Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-19T20:03:56.591Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\andre\\Local Documents\\Coding Train Local\\C#\\Coolector API\\CoolectorAPI\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
               "ToolTip": "C:\\Users\\andre\\Local Documents\\Coding Train Local\\C#\\Coolector API\\CoolectorAPI\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-10-19T02:39:02.853Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 2,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\andre\\Local Documents\\Coding Train Local\\C#\\Coolector API\\CoolectorAPI\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\andre\\Local Documents\\Coding Train Local\\C#\\Coolector API\\CoolectorAPI\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Controllers\\UserController.cs",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAuwJAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T02:21:22.711Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DebtDashboardWCodeDTO.cs",
+              "DocumentMoniker": "C:\\Users\\andre\\Local Documents\\Coding Train Local\\C#\\Coolector API\\CoolectorAPI\\DTO\\Debt\\DebtDashboardWCodeDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\Debt\\DebtDashboardWCodeDTO.cs",
+              "ToolTip": "C:\\Users\\andre\\Local Documents\\Coding Train Local\\C#\\Coolector API\\CoolectorAPI\\DTO\\Debt\\DebtDashboardWCodeDTO.cs",
+              "RelativeToolTip": "DTO\\Debt\\DebtDashboardWCodeDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T02:00:16.107Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DebtRepository.cs",
+              "DocumentMoniker": "C:\\Users\\andre\\Local Documents\\Coding Train Local\\C#\\Coolector API\\CoolectorAPI\\Repositories\\DebtRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\DebtRepository.cs",
+              "ToolTip": "C:\\Users\\andre\\Local Documents\\Coding Train Local\\C#\\Coolector API\\CoolectorAPI\\Repositories\\DebtRepository.cs",
+              "RelativeToolTip": "Repositories\\DebtRepository.cs",
+              "ViewState": "AgIAAK4AAAAAAAAAAAAAAMMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T01:41:45.453Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DebtController.cs",
+              "DocumentMoniker": "C:\\Users\\andre\\Local Documents\\Coding Train Local\\C#\\Coolector API\\CoolectorAPI\\Controllers\\DebtController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DebtController.cs",
+              "ToolTip": "C:\\Users\\andre\\Local Documents\\Coding Train Local\\C#\\Coolector API\\CoolectorAPI\\Controllers\\DebtController.cs",
+              "RelativeToolTip": "Controllers\\DebtController.cs",
+              "ViewState": "AgIAAIUAAAAAAAAAAAAYwKEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T02:13:09.193Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "CodeRequestDTO.cs",
               "DocumentMoniker": "C:\\Users\\andre\\Local Documents\\Coding Train Local\\C#\\Coolector API\\CoolectorAPI\\DTO\\Debt\\CodeRequestDTO.cs",
               "RelativeDocumentMoniker": "DTO\\Debt\\CodeRequestDTO.cs",
@@ -173,11 +185,12 @@
               "RelativeToolTip": "DTO\\Debt\\CodeRequestDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T02:31:34.036Z"
+              "WhenOpened": "2024-11-15T02:31:34.036Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "ClientNameDTO.cs",
               "DocumentMoniker": "C:\\Users\\andre\\Local Documents\\Coding Train Local\\C#\\Coolector API\\CoolectorAPI\\DTO\\Debt\\ClientNameDTO.cs",
               "RelativeDocumentMoniker": "DTO\\Debt\\ClientNameDTO.cs",
@@ -185,11 +198,12 @@
               "RelativeToolTip": "DTO\\Debt\\ClientNameDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T00:32:46.048Z"
+              "WhenOpened": "2024-11-17T00:32:46.048Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "UpdateDebtStatusDTO.cs",
               "DocumentMoniker": "C:\\Users\\andre\\Local Documents\\Coding Train Local\\C#\\Coolector API\\CoolectorAPI\\DTO\\Debt\\UpdateDebtStatusDTO.cs",
               "RelativeDocumentMoniker": "DTO\\Debt\\UpdateDebtStatusDTO.cs",
@@ -197,19 +211,8 @@
               "RelativeToolTip": "DTO\\Debt\\UpdateDebtStatusDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T16:54:53.883Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\andre\\Local Documents\\Coding Train Local\\C#\\Coolector API\\CoolectorAPI\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\andre\\Local Documents\\Coding Train Local\\C#\\Coolector API\\CoolectorAPI\\Controllers\\UserController.cs",
-              "RelativeToolTip": "Controllers\\UserController.cs",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAAAFQAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T02:21:22.711Z"
+              "WhenOpened": "2024-11-17T16:54:53.883Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -221,11 +224,12 @@
               "RelativeToolTip": "DTO\\UserCreateDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T20:06:06.856Z"
+              "WhenOpened": "2024-10-19T20:06:06.856Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "DebtDashboardDTO.cs",
               "DocumentMoniker": "C:\\Users\\andre\\Local Documents\\Coding Train Local\\C#\\Coolector API\\CoolectorAPI\\DTO\\Debt\\DebtDashboardDTO.cs",
               "RelativeDocumentMoniker": "DTO\\Debt\\DebtDashboardDTO.cs",
@@ -233,7 +237,8 @@
               "RelativeToolTip": "DTO\\Debt\\DebtDashboardDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-27T01:32:33.581Z"
+              "WhenOpened": "2024-10-27T01:32:33.581Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -249,18 +254,6 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\Users\\andre\\Local Documents\\Coding Train Local\\C#\\Coolector API\\CoolectorAPI\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "appsettings.Development.json",
-              "ToolTip": "C:\\Users\\andre\\Local Documents\\Coding Train Local\\C#\\Coolector API\\CoolectorAPI\\appsettings.Development.json",
-              "RelativeToolTip": "appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-10-19T02:38:54.358Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 14,
               "Title": "UserLoginDTO.cs",
               "DocumentMoniker": "C:\\Users\\andre\\Local Documents\\Coding Train Local\\C#\\Coolector API\\CoolectorAPI\\DTO\\UserLoginDTO.cs",
@@ -269,7 +262,8 @@
               "RelativeToolTip": "DTO\\UserLoginDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T20:06:22.302Z"
+              "WhenOpened": "2024-10-19T20:06:22.302Z",
+              "EditorCaption": ""
             }
           ]
         }

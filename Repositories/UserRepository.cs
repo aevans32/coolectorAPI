@@ -36,12 +36,13 @@ namespace CoolectorAPI.Repositories
                 {
                     var user = new User
                     {
-                        Id = reader.GetInt32(0),
-                        Email = reader.GetString(1),
-                        Password = reader.GetString(2),
-                        FirstName = reader.GetString(3),
-                        LastName = reader.GetString(4),
-                        Relation = reader.GetString(5),
+                        FirstName = reader.GetString(0),
+                        LastName = reader.GetString(1),
+                        Relation = reader.GetString(2),
+                        Email = reader.GetString(3),
+                        Password = reader.GetString(4),
+                        CompanyCode = reader.IsDBNull(5) ? "" : reader.GetString(5),
+                        Id = reader.GetInt32(6)
                     };
                     users.Add(user);
                 }

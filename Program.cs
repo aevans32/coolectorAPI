@@ -73,7 +73,8 @@ if (app.Environment.IsDevelopment() || app.Environment.EnvironmentName == "Produ
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+// **********************************************CAMBIO A HTTP****************************
+//app.UseHttpsRedirection();
 
 // Apply the CORS policy before UseAuthorization
 app.UseCors("AllowAll");

@@ -1,0 +1,445 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Coolector",
+    "description": "API documentation with Swagger",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/debt/dashboard": {
+      "get": {
+        "tags": [
+          "Debt"
+        ],
+        "summary": "Retrieves all debts for the dashboard including the code for each one.",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/DebtDashboardWCodeDTO"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/debt/add": {
+      "post": {
+        "tags": [
+          "Debt"
+        ],
+        "summary": "Creates a new debt.",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/DebtDashboardDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/api/debt/{code}": {
+      "put": {
+        "tags": [
+          "Debt"
+        ],
+        "summary": "Placeholder for updating a debt. To be implemented.",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "code",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/DebtDashboardDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/debt/delete": {
+      "delete": {
+        "tags": [
+          "Debt"
+        ],
+        "summary": "Method to delete a list of debts.",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/CodeRequestDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/debt/filter-by-client": {
+      "post": {
+        "tags": [
+          "Debt"
+        ],
+        "summary": "Retrieves all pending debts for a specific client based on their name.",
+        "description": "- The clientNameDto must include a valid client name in the `ClientName` property.\r\n- This endpoint only retrieves debts with a status of \"pending\".\r\n- The client's name must match exactly with the values stored in the database.\r\n- Use this endpoint for filtered debt retrieval by client name; for retrieving all debts, use `/dashboard`.",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "The JSON object containing the client's name.",
+            "schema": {
+              "$ref": "#/definitions/ClientNameDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns the list of pending debts for the specified client.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/DebtDashboardWCodeDTO"
+              }
+            }
+          },
+          "400": {
+            "description": "If the client name is null, empty, or invalid."
+          },
+          "500": {
+            "description": "If an internal server error occurs while processing the request."
+          }
+        }
+      }
+    },
+    "/api/debt/update-status": {
+      "put": {
+        "tags": [
+          "Debt"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateDebtStatusDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/user/getAll": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/user/new": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "POST: api/user\r\nCreates a New User",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/UserCreateDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      }
+    },
+    "/api/user/login": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Authenticates a user by verifying the provided email and password.\r\nIf the credentials are valid, a JWT token is generated and returned.\r\nOtherwise, an Unauthorized response is sent.",
+        "description": "This method is accessed via the following endpoint: \r\nPOST: api/user/login\r\n\r\nIt uses the CoolectorAPI.DTO.UserLoginDTO object to capture the email and password submitted by the user.\r\nThe M:CoolectorAPI.Controllers.UserController.GenerateJwtToken(System.Int32) method is called to generate a JWT token for the authenticated user.",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "The data transfer object containing the user's login credentials (email and password).",
+            "schema": {
+              "$ref": "#/definitions/UserLoginDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ClientNameDTO": {
+      "type": "object",
+      "properties": {
+        "clientName": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "CodeRequestDTO": {
+      "type": "object",
+      "properties": {
+        "codes": {
+          "type": "array",
+          "items": {
+            "format": "int32",
+            "type": "integer"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "DebtDashboardDTO": {
+      "type": "object",
+      "properties": {
+        "clientName": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "amount": {
+          "format": "double",
+          "type": "number"
+        },
+        "issueDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "expDate": {
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DebtDashboardWCodeDTO": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "clientName": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "amount": {
+          "format": "double",
+          "type": "number"
+        },
+        "issueDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "expDate": {
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateDebtStatusDTO": {
+      "type": "object",
+      "properties": {
+        "codes": {
+          "type": "array",
+          "items": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "User": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "relation": {
+          "type": "string"
+        },
+        "companyCode": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UserCreateDTO": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "relation": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UserLoginDTO": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

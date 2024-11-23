@@ -152,8 +152,8 @@ namespace CoolectorAPI.Controllers
             var credentials = new SigningCredentials(_key, SecurityAlgorithms.HmacSha256);
 
             var token = new JwtSecurityToken(
-                issuer: "Coolector", //app name
-                audience: "Coolector", //app name too
+                issuer: "Coolector", 
+                audience: "Coolector",
                 claims: claims,
                 expires: DateTime.Now.AddMinutes(10),
                 signingCredentials: credentials

@@ -1,4 +1,3 @@
-C:\Users\andre\Local Documents\Coding Train Local\C#\Coolector API\CoolectorAPI\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\andre\Local Documents\Coding Train Local\C#\Coolector API\CoolectorAPI\bin\Debug\net8.0\appsettings.json
 C:\Users\andre\Local Documents\Coding Train Local\C#\Coolector API\CoolectorAPI\bin\Debug\net8.0\CoolectorAPI.exe
 C:\Users\andre\Local Documents\Coding Train Local\C#\Coolector API\CoolectorAPI\bin\Debug\net8.0\CoolectorAPI.deps.json

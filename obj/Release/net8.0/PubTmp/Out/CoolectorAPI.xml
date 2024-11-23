@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CoolectorAPI</name>
+    </assembly>
+    <members>
+        <member name="M:CoolectorAPI.Controllers.DebtController.#ctor(CoolectorAPI.Repositories.DebtRepository)">
+            <summary>
+            Constructor initializes a new instance of the <see cref="T:CoolectorAPI.Controllers.DebtController"/> class.
+            </summary>
+            <param name="repository">An instance of <see cref="T:CoolectorAPI.Repositories.DebtRepository"/> for handling SQL queries related to debts.</param>
+        </member>
+        <member name="M:CoolectorAPI.Controllers.DebtController.GetAllDebtsForDashboard">
+            <summary>
+            Retrieves all debts for the dashboard including the code for each one.
+            </summary>
+            <returns>A list of debts formatted for the dashboard.</returns>
+        </member>
+        <member name="M:CoolectorAPI.Controllers.DebtController.AddDebt(CoolectorAPI.DTO.Debt.DebtDashboardDTO)">
+            <summary>
+            Creates a new debt.
+            </summary>
+            <param name="debtDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CoolectorAPI.Controllers.DebtController.UpdateDebt(System.Int32,CoolectorAPI.DTO.Debt.DebtDashboardDTO)">
+            <summary>
+            Placeholder for updating a debt. To be implemented.
+            </summary>
+            <returns>Status indicating the result of the update.</returns>
+        </member>
+        <member name="M:CoolectorAPI.Controllers.DebtController.DeleteDebts(CoolectorAPI.DTO.Debt.CodeRequestDTO)">
+            <summary>
+            Method to delete a list of debts.
+            </summary>
+            <returns> 204 No Content indicates successful deletion with no response body.</returns>
+        </member>
+        <member name="M:CoolectorAPI.Controllers.DebtController.GetDebtsByClientName(CoolectorAPI.DTO.Debt.ClientNameDTO)">
+            <summary>
+            Retrieves all pending debts for a specific client based on their name.
+            </summary>
+            <param name="clientNameDto">The JSON object containing the client's name.</param>
+            <returns>
+            A list of pending debts for the specified client, including the debt code, 
+            client name, amount, issue date, and expiration date.
+            </returns>
+            <remarks>
+            - The <paramref name="clientNameDto"/> must include a valid client name in the `ClientName` property.
+            - This endpoint only retrieves debts with a status of "pending".
+            - The client's name must match exactly with the values stored in the database.
+            - Use this endpoint for filtered debt retrieval by client name; for retrieving all debts, use `/dashboard`.
+            </remarks>
+            <response code="200">Returns the list of pending debts for the specified client.</response>
+            <response code="400">If the client name is null, empty, or invalid.</response>
+            <response code="500">If an internal server error occurs while processing the request.</response>
+        </member>
+        <member name="M:CoolectorAPI.Controllers.UserController.#ctor(CoolectorAPI.Repositories.UserRepository,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Constructor initializes a new instance of the <see cref="T:CoolectorAPI.Controllers.UserController"/> class.
+            </summary>
+            <param name="repository">An instance of <see cref="T:CoolectorAPI.Repositories.UserRepository"/> for handling SQL queries related to users.</param>
+            <param name="configuration">An instance of <see cref="T:Microsoft.Extensions.Configuration.IConfiguration"/> used to retrieve application settings, including the JWT secret key.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when the JWT secret key is not provided in the configuration.</exception>
+            <remarks>
+            This constructor initializes the <see cref="T:CoolectorAPI.Controllers.UserController"/> with the necessary dependencies,
+            including a user repository for SQL queries and a secret key for generating JWT tokens.
+            </remarks>
+        </member>
+        <member name="M:CoolectorAPI.Controllers.UserController.PostUser(CoolectorAPI.DTO.UserCreateDTO)">
+            <summary>
+            POST: api/user
+            Creates a New User
+            
+            </summary>
+            <param name="userDto"></param>
+            Contains email and password for the user signin.
+            
+            <returns></returns>
+        </member>
+        <member name="M:CoolectorAPI.Controllers.UserController.Login(CoolectorAPI.DTO.UserLoginDTO)">
+            <summary>
+            Authenticates a user by verifying the provided email and password.
+            If the credentials are valid, a JWT token is generated and returned.
+            Otherwise, an Unauthorized response is sent.
+            </summary>
+            <param name="loginDto">The data transfer object containing the user's login credentials (email and password).</param>
+            <returns>
+            A 200 OK response with a JWT token if authentication is successful.
+            A 401 Unauthorized response if the credentials are invalid.
+            </returns>
+            <remarks>
+            This method is accessed via the following endpoint: 
+            POST: api/user/login
+            
+            It uses the <see cref="T:CoolectorAPI.DTO.UserLoginDTO"/> object to capture the email and password submitted by the user.
+            The <see cref="M:CoolectorAPI.Controllers.UserController.GenerateJwtToken(System.Int32)"/> method is called to generate a JWT token for the authenticated user.
+            </remarks>
+        </member>
+        <member name="M:CoolectorAPI.Controllers.UserController.GenerateJwtToken(System.Int32)">
+            <summary>
+            Helper method to generate a JWT Token for the specified user.
+            </summary>
+            <param name="user">The user object used to generate claims in the JWT.</param>
+            <returns>A JWT token as a string.</returns>
+            <remarks>
+            The token includes only the user's ID as a claim and has an expiration time of 10 minutes.
+            </remarks>
+        </member>
+        <member name="M:CoolectorAPI.Repositories.DebtRepository.GetAllDebtsForDashboardAsync">
+            <summary>
+            GET ALL DEBTS FOR DASHBOARD VIEW WITH DTO
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CoolectorAPI.Repositories.DebtRepository.AddDebtAsync(CoolectorAPI.Models.Debt)">
+            <summary>
+            Adds a new debt entry to the database.
+            </summary>
+            <param name="newDebt">The debt data to be added.</param>
+            <returns>The added debt, including any auto-generated fields like ID if applicable.</returns>
+        </member>
+        <member name="M:CoolectorAPI.Repositories.DebtRepository.GetPendingDebtsByClientNameAsync(System.String)">
+            <summary>
+            Retrieves a list of pending debts for a specific client by their name.
+            </summary>
+            <param name="clientName">The exact name of the client to filter debts for.</param>
+            <returns>
+            A list of <see cref="T:CoolectorAPI.DTO.Debt.DebtDashboardWCodeDTO"/> objects representing the pending debts
+            for the specified client. Each object includes the debt code, client name, amount,
+            issue date, and expiration date.
+            </returns>
+            <remarks>
+            - The query filters debts where the <c>Status</c> is "pending".
+            - The <c>Status</c> column is not returned in the results, as it is assumed to be constant.
+            - Ensure that <paramref name="clientName"/> is a valid and non-null string to avoid errors.
+            </remarks>
+            <exception cref="T:Microsoft.Data.SqlClient.SqlException">
+            Thrown if there is an issue with the database connection or query execution.
+            </exception>
+            <example>
+            Example usage:
+            <code>
+            var debts = await _debtRepository.GetPendingDebtsByClientNameAsync("Robert");
+            </code>
+            </example>
+        </member>
+    </members>
+</doc>
